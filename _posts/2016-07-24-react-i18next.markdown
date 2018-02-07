@@ -1,0 +1,51 @@
+---
+layout: post
+title: Config react-i18next to load locales from bundle in webpack.
+date: 2016-07-24 06:24:20
+description: 
+img: react.png
+tags: [Javascript, React]
+---
+#react-i18next
+
+```shell
+npm install react-i18next i18next-browser-languagedetector i18next-xhr-backend --save
+```
+
+#Loader
+```shell
+npm install json-loader bundler-loader --save-dev
+```
+#webpack config
+
+```javascript
+var jsonLoader = { test: /\.json$/, loader: 'json' }
+
+config.module.loaders.push(jsonLoader, /*...other loaders*/);
+app.js or the entry js where add i18n initialization
+function loadLocales(url, options, callback, data) {
+  try {
+    let waitForLocale = require('bundle!./locales/'+url+'.json');
+    waitForLocale((locale) =&gt; {
+      callback(locale, {status: '200'});
+    })
+  } catch (e) {
+    callback(null, {status: '404'});
+  }
+}
+```
+
+#react app.js
+```javascript
+i18next
+  .use(XHR)
+  .init({
+    backend: {
+      loadPath: '{{lng}}',
+      parse: (data) =&gt; data,
+      ajax: loadLocales
+    }
+  }, (err, t) =&gt; {
+    // ...
+  });
+```
