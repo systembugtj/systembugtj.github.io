@@ -1,10 +1,14 @@
 {
-  "name": "Jekyll-Gulp-Sass-Autoprefixer-Imagemin-BrowserSync",
+  "name": "systembug.github.io",
   "version": "1.0.0",
-  "description": "A starter project for Jekyll",
+  "description": "My Blog",
   "main": "index.js",
-  "repository": "https://github.com/artemsheludko/Jekyll-Gulp-Sass-Autoprefixer-Imagemin-BrowserSync",
-  "author": "Artem Sheludko",
+  "scripts": {
+    "start": "bundle exec jekyll serve",
+    "preinstall": "bundle install"
+  },
+  "repository": "https://github.com/systembugtj/systembugtj.github.io",
+  "author": "Albert Li",
   "license": "MIT",
   "dependencies": {
     "browser-sync": "^2.18.13",
