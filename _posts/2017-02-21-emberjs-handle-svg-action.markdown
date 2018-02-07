@@ -9,8 +9,11 @@ tags: [javascript, Tips, emberjs]
 
 Sample code: <http://jsbin.com/pebohe/edit?html,js,output>
 
-Simply, add {{action “doSomething”}} to SVG g item.
+Simply, add {% raw %}{{action “doSomething”}}{% endraw %}  to SVG g item.
+{% raw %}
 ```html
+
+...
 <svg version="1.1" 
      xmlns="http://www.w3.org/2000/svg"     
      xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -36,3 +39,4 @@ Simply, add {{action “doSomething”}} to SVG g item.
    </g>            
 </svg>   
 ```
+{% endraw %}
