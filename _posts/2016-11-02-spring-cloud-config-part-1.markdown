@@ -62,7 +62,8 @@ server:
 
 eureka:
   instance:
-    prefer-ip-address: true // if run on docker or cloud, not dns support, should use ip address for service.
+    prefer-ip-address: true // if run on docker or cloud, 
+                            // no dns support, should use ip address for service.
   client:
     registerWithEureka: false
     fetchRegistry: false

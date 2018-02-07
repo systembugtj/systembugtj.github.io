@@ -3,7 +3,7 @@ layout: post
 title: Guava Iterables
 date: 2016-07-24 10:27:20 +0300
 description: 
-img: java.png # Add image post (optional)
+img: java.jpg # Add image post (optional)
 tags: [Java, Guava, Tips]
 ---
 
