@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Use rbenv to install cocoapods
-date:   2018-02-06 17:53:46 -0800
+date:   2018-02-07 17:53:46 -0800
 description: 
-img: jekyll.png # Add image post (optional)
+img: cocoapods.jpg # Add image post (optional)
 tags: [cocoapods, Ruby] # add tag
 ---
 
