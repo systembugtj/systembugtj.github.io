@@ -1,7 +1,7 @@
 ---
 layout: post
 title: UITableViewController and UITableViewCell
-date:   2018-02-07 05:41:46 -0800
+date:   2018-02-07 05:41:46 +0800
 description: 
 img: mac.jpg # Add image post (optional)
 tags: [Blog, jekyll, Ruby] # add tag
