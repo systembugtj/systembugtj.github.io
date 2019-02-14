@@ -15,3 +15,6 @@ tags: [Azure, database, SQLServer] # add tag
 
 # Select Chinese_PRC_CS_AS for collation
 
+# Management Tools
+
+[Azure Data Studio](https://docs.microsoft.com/en-us/sql/azure-data-studio/what-is?view=sql-server-2017)
