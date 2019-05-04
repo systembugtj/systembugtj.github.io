@@ -1,21 +1,19 @@
 ---
 layout: post
-title: 微信小程序支付的坑们
-date:   2018-04-02 10:53:00 +0800
+title: vuejs and electron
+date:   2019-01-19 16:37:00 +0800
 description: 
 img: mac.jpg # Add image post (optional)
-tags: [wechat, wxapp] # add tag
+tags: [electron, emberjs, vuejs] # add tag
 ---
 
-# 小程序的appid 和 商户ID
+# vuejs electron
 
-## 绑定商户ID方式：不能使用开放平台开通的商户ID，这个帮了也支付不了。最后是绑定到了公众号（服务号）开通的支付商户ID
+https://github.com/SimulatedGREG/electron-vue
 
-# 回传签名
+This is for vuejs
 
-特别注意签名是使用 appId，不是 appid。不知道微信团队是如何处理的，估计PM祭天了。
-
-# 调起支付
+# Electron
 
 http://www.nodeclass.com/articles/114051 
 
@@ -38,4 +36,3 @@ https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_12&index=2
 
 坑们
 https://segmentfault.com/a/1190000006886519
-

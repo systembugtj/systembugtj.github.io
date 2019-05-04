@@ -7,11 +7,11 @@ img: azure.png # Add image post (optional)
 tags: [Azure, database, SQLServer] # add tag
 ---
 
-# Create a azure database server
+# Create an azure database server, don't create database.
 
-# Upload *.backpac to Azure Blob if don't have, create one
+# Upload *.backpac to Azure Blob if don't have it, create one
 
 # Use import database select *.backpac from the Blob
 
-# Select Chinese_PRC_CS_AS for collation
+# Select Chinese_PRC_CS_AS for collation if your database is using chinese character
 
