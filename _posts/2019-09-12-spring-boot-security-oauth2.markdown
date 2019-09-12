@@ -3,7 +3,7 @@ layout: post
 title: Spring Security 5 and OAuth2
 date:   2019-09-12 09:30:00 +0800
 description: 
-img: spring.jpg # Add image post (optional)
+img: spring.png # Add image post (optional)
 tags: [Spring Boot, Security, OAuth2] # add tag
 ---
 
