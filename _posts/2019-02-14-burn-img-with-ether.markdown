@@ -11,4 +11,4 @@ tags: [IOS, etcher] # add tag
 
 [Download](https://www.balena.io/etcher/)
 
-![tomcat3](https://www.balena.io/static/steps-8006dca57323756b1b84fb9408742409.gif)
+![balenaEtcher](https://www.balena.io/static/steps-8006dca57323756b1b84fb9408742409.gif)
