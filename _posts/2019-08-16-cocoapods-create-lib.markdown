@@ -22,12 +22,14 @@ $ pod spec lint Peanut.podspec
 
 # Folder Struture
 
+```html
 Example/Demo
     MyLibDemo
         Mylib.xcodeworkspace
         Podfile
 MyLib.xcodeproj
 MyLib.podspec
+```
 
 
 1. Demo is designed to test or use the Mylib
