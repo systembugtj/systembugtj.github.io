@@ -7,7 +7,7 @@ img: how-to-start.jpg # Add image post (optional)
 tags: [Programming, Learn, 微信, wechat] # add tag
 ---
 
-小程序是纯粹的前端，自身没有后端。需要开发对应的服务器端api支持。
+# 小程序是纯粹的前端，自身没有后端。需要开发对应的服务器端api支持。
 
 后端服务域名需要在小程序的开发管理中进行设置后，才可以访问。
 
@@ -17,6 +17,6 @@ tags: [Programming, Learn, 微信, wechat] # add tag
 - api_ticket 使用上面获取的access_token 
 - 7200 秒的限制，需要在服务器端缓存 （redis，memory都可以）。
 
-二维码链接打开小程序 
+# 二维码链接打开小程序 
 
-需要在配置小程序的跳转链接
+# 需要在配置小程序的跳转链接

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: fileprivate and private in swift
-date: 2017-04-17 13:10:20 +0300
+date: 2017-04-17 08:14:20 +0300
 description: 
 img: i-rest.jpg # Add image post (optional)
 tags: [Swift, Learn, Tips]
