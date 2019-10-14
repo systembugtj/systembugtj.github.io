@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Xamarin Forms Binding Tips
-date:   2019-010-14 09:59:00 +0800
+date:   2019-10-14 09:59:00 +0800
 description: 
 img: xamarin.png # Add image post (optional)
 tags: [Xamarin Forms] # add tag
