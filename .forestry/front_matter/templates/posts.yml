@@ -1,0 +1,45 @@
+# Forestry CMS Post Template
+# 这个文件定义了Forestry CMS中文章的内容结构
+
+label: "Blog Post"
+hide_body: false
+fields:
+  - type: "text"
+    name: "title"
+    label: "Title"
+    required: true
+    hint: "文章标题"
+  - type: "datetime"
+    name: "date"
+    label: "Publish Date"
+    required: true
+    hint: "发布日期"
+  - type: "text"
+    name: "description"
+    label: "Description"
+    required: false
+    hint: "文章描述"
+  - type: "file"
+    name: "img"
+    label: "Featured Image"
+    required: false
+    hint: "特色图片（可选）"
+  - type: "list"
+    name: "tags"
+    label: "Tags"
+    required: false
+    hint: "标签列表"
+    config:
+      use_select: false
+      source:
+        type: "pages"
+        section: ""
+        file: "tags"
+        path: "tags"
+        branch: ""
+  - type: "text"
+    name: "layout"
+    label: "Layout"
+    default: "post"
+    hidden: true
+

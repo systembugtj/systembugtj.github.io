@@ -1,0 +1,61 @@
+# Forestry CMS Settings
+# 这个文件配置Forestry CMS的基本设置
+
+version: 2
+sections:
+  - type: "jekyll-posts"
+    name: "posts"
+    label: "Blog Posts"
+    path: "_posts"
+    create_documents: true
+    new_doc_extension: "md"
+    front_matter_path: ""
+    uploads: "assets/img"
+    path_prefix: "_posts"
+    sort_by: "date"
+    sort_direction: "desc"
+  - type: "jekyll-pages"
+    name: "pages"
+    label: "Pages"
+    path: ""
+    create_documents: true
+    new_doc_extension: "html"
+    front_matter_path: ""
+    uploads: "assets/img"
+    path_prefix: ""
+    sort_by: "title"
+    sort_direction: "asc"
+
+sources:
+  - type: "jekyll"
+    path: "."
+    branch: "master"
+    config: "_config.yml"
+    preview_path: "/:title/"
+    preview_host: "https://systembugtj.github.io"
+    build:
+      preview_command: "bundle exec jekyll build --drafts --unpublished"
+      publish_command: "bundle exec jekyll build"
+      preview_output_directory: "_site"
+      publish_output_directory: "_site"
+    front_matter:
+      - path: "_posts"
+        type: "posts"
+        template: "posts"
+        create_documents: true
+        new_doc_extension: "md"
+        front_matter_path: ""
+        uploads: "assets/img"
+        path_prefix: "_posts"
+        sort_by: "date"
+        sort_direction: "desc"
+      - path: ""
+        type: "pages"
+        create_documents: true
+        new_doc_extension: "html"
+        front_matter_path: ""
+        uploads: "assets/img"
+        path_prefix: ""
+        sort_by: "title"
+        sort_direction: "asc"
+

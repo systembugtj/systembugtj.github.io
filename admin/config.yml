@@ -1,0 +1,46 @@
+# Netlify CMS Configuration
+# 这个文件配置Netlify CMS的内容管理界面
+
+backend:
+  name: github
+  repo: systembugtj/systembugtj.github.io
+  branch: master
+  site_domain: systembugtj.github.io
+
+media_folder: "assets/img"
+public_folder: "/assets/img"
+
+collections:
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Featured Image", name: "img", widget: "image", required: false}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "index.html"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Layout", name: "layout", widget: "hidden", default: "main"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      
+      - file: "tags.html"
+        label: "Tags Page"
+        name: "tags"
+        fields:
+          - {label: "Title", name: "title", widget: "string", default: "Tags"}
+          - {label: "Layout", name: "layout", widget: "hidden", default: "main"}
+          - {label: "Body", name: "body", widget: "markdown"}
+

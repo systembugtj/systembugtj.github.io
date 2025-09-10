@@ -24,12 +24,40 @@ analytics: # Google Analytics
 
 # Build Settings
 markdown: kramdown
+highlighter: rouge
 plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jemoji
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections for better content organization
+collections:
+  posts:
+    output: true
+    permalink: /:title/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "ALBERT LI"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "main"
 
 paginate: 8
 paginate_path: "/page/:num"
+
+# Forestry CMS configuration
+forestry:
+  preview_path: /:title/
+  preview_host: https://systembugtj.github.io
 
 exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
