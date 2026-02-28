@@ -2,6 +2,7 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import { getCollection, render } from 'astro:content';
 import { siteConfig } from '../data/site';
+import { formatBlogDateTime } from '../lib/blog';
 
 const SITE_URL = 'https://www.systembug.me';
 
@@ -35,14 +36,7 @@ const shareTitle = encodeURIComponent(post.data.title);
         <header class="header-page">
           <h1 class="page-title">{post.data.title}</h1>
           <div class="page-date">
-            <span>
-              {post.data.date.toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'short',
-                day: '2-digit',
-              })}
-              &nbsp;&nbsp;&nbsp;&nbsp;
-            </span>
+            <span>{formatBlogDateTime(post.data.date)}</span>
           </div>
         </header>
         <Content />

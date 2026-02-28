@@ -1,6 +1,6 @@
 ---
 title: add-apt-repository command not found
-date: 2017-01-03
+date: 2017-01-03 09:00
 img: linux.jpg
 tags:
   - linux

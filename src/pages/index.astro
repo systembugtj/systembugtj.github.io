@@ -3,7 +3,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 import Pagination from '../components/Pagination.astro';
 import { getCollection } from 'astro:content';
 import { siteConfig } from '../data/site';
-import { sortBlogByDateDesc } from '../lib/blog';
+import { sortBlogByDateDesc, formatBlogDateTime } from '../lib/blog';
 
 const PER_PAGE = 8;
 const allPosts = (await getCollection('blog')).sort(sortBlogByDateDesc);
@@ -17,10 +17,6 @@ function excerpt(body: string | undefined, fallback: string, maxWords = 15): str
     return words.length > maxWords ? words.slice(0, maxWords).join(' ') + '…' : words.join(' ');
   }
   return fallback || '';
-}
-
-function formatDate(d: Date): string {
-  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit' });
 }
 
 function readingTime(body: string | undefined): number {
@@ -48,7 +44,7 @@ function readingTime(body: string | undefined): number {
             <a href={`/${slug}/`}>{post.data.title}</a>
           </h2>
           <p>{excerptText}</p>
-          <span class="post-date">{formatDate(post.data.date)}&nbsp;&nbsp;&nbsp;—&nbsp;</span>
+          <span class="post-date">{formatBlogDateTime(post.data.date)}&nbsp;&nbsp;&nbsp;—&nbsp;</span>
           <span class="post-words">{minutes} minute read</span>
         </div>
       </article>

@@ -32,9 +32,13 @@ img {
 
 a {
   color: $dark-blue;
-  transition: color 0.15s ease;
+  transition: color 0.2s ease;
   &:hover {
     color: $accent;
+  }
+  &:focus-visible {
+    outline: 2px solid $accent;
+    outline-offset: 2px;
   }
 }
 
@@ -127,4 +131,22 @@ table tfoot {
 
 .clearfix::after {
   clear: both;
+}
+
+/* Interactive: cursor and focus (ui-ux-pro-max checklist) */
+button,
+a[href],
+[role="button"] {
+  cursor: pointer;
+}
+
+/* Respect reduced motion (accessibility) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

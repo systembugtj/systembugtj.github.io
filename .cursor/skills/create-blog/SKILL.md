@@ -19,17 +19,17 @@ Use this schema (from `src/content.config.ts`):
 | Field         | Required | Type   | Notes |
 |---------------|----------|--------|--------|
 | `title`       | Yes      | string | Display title (can differ from slug) |
-| `date`        | Yes      | string | `YYYY-MM-DD` (e.g. `2017-01-03`) |
+| `date`        | Yes      | string | Date and optional time: `YYYY-MM-DD` or `YYYY-MM-DD HH:mm` or ISO 8601 (e.g. `2017-01-03`, `2026-02-28 14:30`) |
 | `description`| No       | string | Short summary for listings |
 | `img`         | No       | string | Hero/thumbnail filename only, e.g. `linux.jpg` (site resolves under assets) |
 | `tags`        | No       | array  | Default `[]`, e.g. `['linux']` or `['Spring Boot','OAuth2']` |
 
-Example:
+Example (with time):
 
 ```yaml
 ---
 title: add-apt-repository command not found
-date: 2017-01-03
+date: 2017-01-03 09:00
 img: linux.jpg
 tags:
   - linux
@@ -46,7 +46,7 @@ tags:
 ## Workflow when creating a new post
 
 1. **Slug**: Pick a kebab-case filename from the topic (e.g. "Aliyun Docker quickfix" → `aliyun-docker-issue-quickfix.md`).
-2. **Date**: Use today in `YYYY-MM-DD` unless the user specifies another date.
+2. **Date**: Use today in `YYYY-MM-DD` or `YYYY-MM-DD HH:mm` (e.g. `2026-02-28 14:00`) unless the user specifies otherwise. The site displays date and time everywhere (home, post page, tags).
 3. **Frontmatter**: Set at least `title` and `date`; add `description`, `img`, and `tags` when relevant.
 4. **Content**: Write Markdown; use code blocks and `/assets/img/...` for images as above.
 5. **Hero/thumbnail image (recommended)**: Add a free image so the post has a card image on the home page and article header. Follow "Adding a hero/thumbnail image" below.

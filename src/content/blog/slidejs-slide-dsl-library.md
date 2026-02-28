@@ -1,6 +1,6 @@
 ---
 title: SlideJS - A Slide DSL Library for Any Data Source
-date: 2026-02-28
+date: 2026-02-28 12:45
 img: slidejs.jpg
 tags:
   - frontend

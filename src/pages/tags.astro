@@ -1,6 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import { getCollection } from 'astro:content';
+import { formatBlogDateTime } from '../lib/blog';
 
 const allPosts = await getCollection('blog');
 const tagMap = new Map<string, typeof allPosts>();
@@ -28,7 +29,7 @@ const tags = Array.from(tagMap.entries())
         {posts.map((post) => (
           <li>
             <a href={`/${post.id}/`}>{post.data.title}</a>
-            <span class="post-date"> — {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit' })}</span>
+            <span class="post-date"> — {formatBlogDateTime(post.data.date)}</span>
           </li>
         ))}
       </ul>
