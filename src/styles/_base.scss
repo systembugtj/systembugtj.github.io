@@ -97,6 +97,8 @@ table tfoot {
 }
 
 .wrapper {
+  width: 100%;
+  min-width: 280px;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;

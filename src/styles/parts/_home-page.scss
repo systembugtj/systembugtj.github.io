@@ -1,5 +1,7 @@
 @use '../variables' as *;
 
+$sidebar-width: clamp(220px, 22vw, 260px);
+
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -8,9 +10,9 @@
   top: 0;
   left: 0;
   bottom: 0;
-  width: 260px;
+  width: $sidebar-width;
   height: 100%;
-  padding: 2rem 1.25rem;
+  padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 2vw, 1.25rem);
   background-color: $surface;
   border-right: 1px solid $border;
   box-shadow: $shadow-sm;
@@ -73,8 +75,10 @@
 }
 
 .content-box {
-  padding: 2rem;
-  padding-left: 300px;
+  padding: clamp(1rem, 4vw, 2rem);
+  padding-left: calc(#{$sidebar-width} + clamp(1rem, 4vw, 2rem));
+  min-width: 0;
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
