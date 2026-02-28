@@ -1,0 +1,22 @@
+---
+title: React with fetch Api
+date: 2016-07-26
+img: react.png
+tags:
+  - Javascript
+  - React
+---
+
+参见 传统 Ajax 已死，Fetch 永生
+
+使用ES7 aysnc/await语法后代码的整洁了不少。
+
+```javascript
+try {
+  let response = await fetch(url);
+  let data = await response.json();
+  console.log(data);
+} catch(e) {
+  console.log("Oops, error", e);
+}
+```

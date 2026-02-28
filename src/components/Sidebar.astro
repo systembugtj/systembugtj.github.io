@@ -1,0 +1,62 @@
+---
+import { siteConfig } from '../data/site';
+const year = new Date().getFullYear();
+---
+<aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/">
+          <img src={`/assets/img/${siteConfig.authorImg}`} alt={siteConfig.author} />
+        </a>
+      </div>
+      <div class="author-name">{siteConfig.author}</div>
+      <p>{siteConfig.aboutAuthor}</p>
+    </div>
+  </header>
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        {siteConfig.twitter && (
+          <li>
+            <a href={`https://twitter.com/${siteConfig.twitter}`} target="_blank" rel="noopener noreferrer">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+          </li>
+        )}
+        {siteConfig.facebook && (
+          <li>
+            <a href={`https://facebook.com/${siteConfig.facebook}`} target="_blank" rel="noopener noreferrer">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+          </li>
+        )}
+        {siteConfig.github && (
+          <li class="github">
+            <a href={`https://github.com/${siteConfig.github}`} target="_blank" rel="noopener noreferrer">
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </a>
+          </li>
+        )}
+        {siteConfig.linkedin && (
+          <li class="linkedin">
+            <a href={`https://www.linkedin.com/in/${siteConfig.linkedin}`} target="_blank" rel="noopener noreferrer">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+          </li>
+        )}
+        {siteConfig.email && (
+          <li class="email">
+            <a href={`mailto:${siteConfig.email}`}>
+              <i class="fa fa-envelope-o" aria-hidden="true"></i>
+            </a>
+          </li>
+        )}
+      </ul>
+    </section>
+    <div class="copyright">
+      <p>{year} &copy; {siteConfig.author}</p>
+    </div>
+  </footer>
+</aside>

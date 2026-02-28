@@ -1,0 +1,79 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { getCollection, render } from 'astro:content';
+import { siteConfig } from '../data/site';
+
+const SITE_URL = 'https://www.systembug.me';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const canonicalUrl = `${SITE_URL}/${post.id}/`;
+const shareTitle = encodeURIComponent(post.data.title);
+---
+
+<MainLayout title={`${post.data.title} - ${siteConfig.title}`}>
+  <article class="article-page">
+    <div class="page-content">
+      {post.data.img && (
+        <div class="page-cover-image">
+          <img
+            class="page-image"
+            src={`/assets/img/${post.data.img}`}
+            alt={post.data.title}
+          />
+        </div>
+      )}
+      <div class="wrap-content">
+        <header class="header-page">
+          <h1 class="page-title">{post.data.title}</h1>
+          <div class="page-date">
+            <span>
+              {post.data.date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: '2-digit',
+              })}
+              &nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+          </div>
+        </header>
+        <Content />
+        <div class="page-footer">
+          <div class="page-share">
+            <a
+              href={`https://twitter.com/intent/tweet?text=${shareTitle}&url=${encodeURIComponent(canonicalUrl)}`}
+              title="Share on Twitter"
+              rel="nofollow"
+              target="_blank"
+            >
+              Twitter
+            </a>
+            <a
+              href={`https://facebook.com/sharer.php?u=${encodeURIComponent(canonicalUrl)}`}
+              title="Share on Facebook"
+              rel="nofollow"
+              target="_blank"
+            >
+              Facebook
+            </a>
+          </div>
+          <div class="page-tag">
+            {(post.data.tags ?? []).map((tag) => (
+              <a href={`/tags#${tag.replace(/\s+/g, '-').toLowerCase()}`} class="tag">
+                &#35; {tag}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</MainLayout>

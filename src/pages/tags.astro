@@ -1,0 +1,37 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+const tagMap = new Map<string, typeof allPosts>();
+for (const post of allPosts) {
+  const tags = post.data.tags ?? [];
+  for (const tag of tags) {
+    if (!tagMap.has(tag)) tagMap.set(tag, []);
+    tagMap.get(tag)!.push(post);
+  }
+}
+// Sort tags by name; sort posts within each tag by date desc
+const tags = Array.from(tagMap.entries())
+  .sort((a, b) => a[0].localeCompare(b[0]))
+  .map(([tag, posts]) => ({
+    tag,
+    posts: [...posts].sort((a, b) => b.data.date.getTime() - a.data.date.getTime()),
+  }));
+---
+<MainLayout title="Tags">
+  <h1>Tags</h1>
+  {tags.map(({ tag, posts }) => (
+    <section id={tag.replace(/\s+/g, '-').toLowerCase()} class="tag-section">
+      <h2>{tag}</h2>
+      <ul>
+        {posts.map((post) => (
+          <li>
+            <a href={`/${post.id}/`}>{post.data.title}</a>
+            <span class="post-date"> — {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit' })}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</MainLayout>
