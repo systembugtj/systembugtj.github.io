@@ -1,5 +1,7 @@
-/* Medium Devices, Desktops */
-@media only screen and (max-width : 992px) {
+@use 'variables' as *;
+
+/* Medium — two columns for post cards */
+@media only screen and (max-width: 992px) {
   .post {
     width: 48%;
     max-width: 100%;
@@ -8,86 +10,78 @@
 
     .post-thumbnail {
       width: 100%;
+      min-height: 10rem;
     }
 
     .post-content {
       width: 100%;
-      .post-title {
-        margin: 0 0 5px;
-        a {
-          font-size: 21px;
-        }
+      padding: 1rem 1.25rem;
+
+      .post-title a {
+        font-size: 1.125rem;
       }
     }
   }
 }
 
-/* Small Devices, Tablets */
-@media only screen and (max-width : 768px) {
+/* Small — sidebar stacks, single column */
+@media only screen and (max-width: 768px) {
   .sidebar {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     width: 100%;
-    padding: 10px;
-    background-color: #ffffff;
-    box-shadow: 0 1px 1px 0 rgba(31, 35, 46, .15);
-
-    footer {
-      margin-bottom: 10px;
-    }
-
+    padding: 1.5rem 1.25rem;
+    border-right: none;
+    border-bottom: 1px solid $border;
+    box-shadow: 0 1px 0 0 $border;
   }
+
+  .sidebar footer {
+    margin-bottom: 0;
+  }
+
   .about {
-    text-align: center;
     max-width: 480px;
-    margin: 10px auto auto;
-    img {
-      width: 100px;
-      height: 100px;
-      border-radius: 100%;
-      margin-bottom: 10px;
-    }
-}
-
-  .content-box {
-    padding: 20px 10px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: stretch;
+    margin: 0 auto 1.5rem;
   }
 
-.contact-title, .copyright {
-  display: none;
-}
-
-}
-
-/* Extra Small Devices, Phones */
-@media only screen and (max-width : 480px) {
   .content-box {
-    padding: 10px;
+    padding: 1.5rem 1rem;
+    padding-left: 1rem;
   }
+
+  .contact .contact-title,
+  .copyright {
+    display: none;
+  }
+}
+
+/* Extra small */
+@media only screen and (max-width: 480px) {
+  .content-box {
+    padding: 1rem;
+  }
+
   .post {
-    width: 98%;
-    max-width: 100%;
-    margin: 2%;
+    width: 100%;
+    margin: 0 0 1.25rem;
     flex-direction: column;
 
     .post-thumbnail {
       width: 100%;
+      min-height: 9rem;
     }
 
     .post-content {
       width: 100%;
-      .post-title {
-        margin: 0 0 5px;
-        a {
-          font-size: 21px;
-        }
+      padding: 1rem 1.25rem;
+
+      .post-title a {
+        font-size: 1.0625rem;
       }
     }
+  }
+
+  .wrap-content {
+    padding: 1rem;
   }
 }
