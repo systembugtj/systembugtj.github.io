@@ -1,6 +1,6 @@
 ---
 name: create-blog
-description: Creates or edits blog posts in this Astro site. Use when the user asks to create a blog post, add a post, write an article, or references @blog or the blog collection.
+description: Creates or edits blog posts in this Astro site. Use when the user asks to create a blog post, add a post, write an article, or references @blog or the blog collection. Includes adding a free hero image (Pexels) when creating a new post.
 ---
 
 # Create Blog Post (systembug.me)
@@ -49,7 +49,32 @@ tags:
 2. **Date**: Use today in `YYYY-MM-DD` unless the user specifies another date.
 3. **Frontmatter**: Set at least `title` and `date`; add `description`, `img`, and `tags` when relevant.
 4. **Content**: Write Markdown; use code blocks and `/assets/img/...` for images as above.
-5. **Place file** at `src/content/blog/{slug}.md`.
+5. **Hero/thumbnail image (recommended)**: Add a free image so the post has a card image on the home page and article header. Follow "Adding a hero/thumbnail image" below.
+6. **Place file** at `src/content/blog/{slug}.md`.
+
+## Adding a hero/thumbnail image
+
+Each new post should include an `img` in frontmatter so it shows a thumbnail on the home page. Use a **free, open-source** image (no attribution required for use; attribution appreciated).
+
+### Source: Pexels
+
+- **Site**: [pexels.com](https://www.pexels.com/) — free for personal and commercial use; attribution not required.
+- **Search**: Use a query that matches the post topic (e.g. "code programming", "javascript", "web development", "laptop code").
+- **Pick**: Choose a landscape or square image that works as a card thumbnail (code on screen, browser, dev setup, etc.).
+
+### Steps
+
+1. **Choose filename**: Use a short, slug-like name, e.g. `wsxjs.jpg`, `docker-fix.jpg`. Store under `public/assets/img/`.
+2. **Download**: Download the image from Pexels (or use a direct URL with `curl`). Save as `public/assets/img/{filename}` (e.g. `public/assets/img/wsxjs.jpg`).
+   - Example Pexels direct URL (code/programming): `https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800&fit=max`
+   - Example curl: `curl -sL -o "public/assets/img/wsxjs.jpg" "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800&fit=max"`
+3. **Frontmatter**: Add `img: {filename}` to the post (e.g. `img: wsxjs.jpg`). The site resolves it as `/assets/img/{filename}`.
+4. **Attribution (optional)**: You may add a line at the end of the post, e.g. `*Cover image: [Photographer Name](Pexels photo URL) / Pexels*`.
+
+### Alternative sources
+
+- **Unsplash** (unsplash.com): Free; prefer linking from their CDN per their guidelines, or download and self-host if the user prefers.
+- **Pixabay** (pixabay.com): Free; allows download and reuse; no attribution required.
 
 ## Conventions (from existing posts)
 
@@ -63,4 +88,5 @@ tags:
 - [ ] File is at `src/content/blog/{slug}.md`.
 - [ ] Frontmatter has `title` and `date` (YYYY-MM-DD).
 - [ ] No extra properties in frontmatter (only title, date, description, img, tags).
+- [ ] **Hero image**: If adding an image, file is in `public/assets/img/{filename}` and frontmatter has `img: {filename}`. Image is from a free source (e.g. Pexels).
 - [ ] Body is valid Markdown; code blocks have language identifiers; images use `/assets/img/...` if needed.

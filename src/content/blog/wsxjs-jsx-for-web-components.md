@@ -1,6 +1,7 @@
 ---
 title: WSXJS - JSX for Native Web Components
 date: 2026-02-28
+img: wsxjs.jpg
 tags:
   - frontend
   - Web Components
