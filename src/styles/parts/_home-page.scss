@@ -236,6 +236,10 @@ a.newer-posts {
   transition: color 0.2s ease, background-color 0.2s ease;
 }
 
+.pagination .container ul li {
+  list-style: none;
+}
+
 a.older-posts:hover,
 a.newer-posts:hover {
   color: $accent;
