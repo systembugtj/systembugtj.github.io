@@ -1,9 +1,73 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
-    <path d="M50.4 78.5a75.1 75.1 0 0 0-28.5 6.9l24.2-65.7c.7-2 1.9-3.2 3.4-3.2h29c1.5 0 2.7 1.2 3.4 3.2l24.2 65.7s-11.6-7-28.5-7L67 45.5c-.4-1.7-1.6-2.8-2.9-2.8-1.3 0-2.5 1.1-2.9 2.7L50.4 78.5Zm-1.1 28.2Zm-4.2-20.2c-2 6.6-.6 15.8 4.2 20.2a17.5 17.5 0 0 1 .2-.7 5.5 5.5 0 0 1 5.7-4.5c2.8.1 4.3 1.5 4.7 4.7.2 1.1.2 2.3.2 3.5v.4c0 2.7.7 5.2 2.2 7.4a13 13 0 0 0 5.7 4.9v-.3l-.2-.3c-1.8-5.6-.5-9.5 4.4-12.8l1.5-1a73 73 0 0 0 3.2-2.2 16 16 0 0 0 6.8-11.4c.3-2 .1-4-.6-6l-.8.6-1.6 1a37 37 0 0 1-22.4 2.7c-5-.7-9.7-2-13.2-6.2Z" />
-    <style>
-        path { fill: #000; }
-        @media (prefers-color-scheme: dark) {
-            path { fill: #FFF; }
-        }
-    </style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#09090f"/>
+      <stop offset="100%" stop-color="#0d1224"/>
+    </linearGradient>
+    <linearGradient id="core" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="50%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="arm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.5"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softglow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.7" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="32" height="32" rx="7" fill="url(#bg)"/>
+
+  <!-- ── Neural connection arms (6 legs, circuit style) ── -->
+  <!-- Top-left -->
+  <line x1="12.5" y1="12" x2="6" y2="7" stroke="url(#arm)" stroke-width="1" stroke-linecap="round"/>
+  <rect x="4.5" y="5.5" width="2" height="2" rx="0.5" fill="#a855f7" opacity="0.8" filter="url(#softglow)"/>
+  <!-- Top-right -->
+  <line x1="19.5" y1="12" x2="26" y2="7" stroke="url(#arm)" stroke-width="1" stroke-linecap="round"/>
+  <rect x="25.5" y="5.5" width="2" height="2" rx="0.5" fill="#06b6d4" opacity="0.8" filter="url(#softglow)"/>
+  <!-- Mid-left -->
+  <line x1="11" y1="16" x2="4" y2="16" stroke="url(#arm)" stroke-width="1" stroke-linecap="round"/>
+  <rect x="2.5" y="14.8" width="2" height="2" rx="0.5" fill="#8b5cf6" opacity="0.7" filter="url(#softglow)"/>
+  <!-- Mid-right -->
+  <line x1="21" y1="16" x2="28" y2="16" stroke="url(#arm)" stroke-width="1" stroke-linecap="round"/>
+  <rect x="27.5" y="14.8" width="2" height="2" rx="0.5" fill="#22d3ee" opacity="0.7" filter="url(#softglow)"/>
+  <!-- Bottom-left -->
+  <line x1="12.5" y1="20" x2="6" y2="25" stroke="url(#arm)" stroke-width="1" stroke-linecap="round"/>
+  <rect x="4.5" y="24.5" width="2" height="2" rx="0.5" fill="#a855f7" opacity="0.6" filter="url(#softglow)"/>
+  <!-- Bottom-right -->
+  <line x1="19.5" y1="20" x2="26" y2="25" stroke="url(#arm)" stroke-width="1" stroke-linecap="round"/>
+  <rect x="25.5" y="24.5" width="2" height="2" rx="0.5" fill="#06b6d4" opacity="0.6" filter="url(#softglow)"/>
+
+  <!-- ── Antennae (top, with square terminals) ── -->
+  <line x1="14" y1="10" x2="11" y2="4" stroke="#a855f7" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
+  <circle cx="10.5" cy="3.5" r="1.2" fill="#c084fc" filter="url(#softglow)"/>
+  <line x1="18" y1="10" x2="21" y2="4" stroke="#06b6d4" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
+  <circle cx="21.5" cy="3.5" r="1.2" fill="#67e8f9" filter="url(#softglow)"/>
+
+  <!-- ── Central bug body: two hexagonal segments ── -->
+  <!-- Head: small rounded diamond -->
+  <path d="M16 8 L19 11 L16 13 L13 11 Z" fill="url(#core)" filter="url(#glow)"/>
+  <!-- Body: larger rounded hexagon -->
+  <path d="M16 14 L21 16 L21 21 L16 24 L11 21 L11 16 Z" fill="url(#core)" filter="url(#glow)"/>
+
+  <!-- Body highlight (glossy sheen) -->
+  <ellipse cx="14.5" cy="17" rx="2.5" ry="3.5" fill="white" opacity="0.08"/>
+
+  <!-- Center eye / core node -->
+  <circle cx="16" cy="16" r="2" fill="white" opacity="0.15"/>
+  <circle cx="16" cy="16" r="1" fill="white" opacity="0.6" filter="url(#softglow)"/>
 </svg>
