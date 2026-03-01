@@ -46,7 +46,7 @@ tags:
 ## Workflow when creating a new post
 
 1. **Slug**: Pick a kebab-case filename from the topic (e.g. "Aliyun Docker quickfix" → `aliyun-docker-issue-quickfix.md`).
-2. **Date**: Use today in `YYYY-MM-DD` or `YYYY-MM-DD HH:mm` (e.g. `2026-02-28 14:00`) unless the user specifies otherwise. The site displays date and time everywhere (home, post page, tags).
+2. **Date**: Use the **current date and time when the post is created**. Run `date '+%Y-%m-%d %H:%M'` (or use the system time at creation) to set `date: YYYY-MM-DD HH:mm` so the post timestamp reflects creation time. Only use a different date/time if the user explicitly specifies one. The site displays date and time everywhere (home, post page, tags).
 3. **Frontmatter**: Set at least `title` and `date`; add `description`, `img`, and `tags` when relevant.
 4. **Content**: Write Markdown; use code blocks and `/assets/img/...` for images as above.
 5. **Hero/thumbnail image (recommended)**: Add a free image so the post has a card image on the home page and article header. Follow "Adding a hero/thumbnail image" below.
@@ -86,7 +86,7 @@ Each new post should include an `img` in frontmatter so it shows a thumbnail on 
 ## Checklist before finishing
 
 - [ ] File is at `src/content/blog/{slug}.md`.
-- [ ] Frontmatter has `title` and `date` (YYYY-MM-DD).
+- [ ] Frontmatter has `title` and `date` (YYYY-MM-DD or YYYY-MM-DD HH:mm, set to creation time).
 - [ ] No extra properties in frontmatter (only title, date, description, img, tags).
 - [ ] **Hero image**: If adding an image, file is in `public/assets/img/{filename}` and frontmatter has `img: {filename}`. Image is from a free source (e.g. Pexels).
 - [ ] Body is valid Markdown; code blocks have language identifiers; images use `/assets/img/...` if needed.
